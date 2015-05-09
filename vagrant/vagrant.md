@@ -21,8 +21,10 @@ Vagrant は仮想イメージを `box` とよばれるフォーマットで扱�
 
 コマンド実行後は
 
-`$ vagrant list`
+`$ vagrant box list`
 
 でローカルに登録された`box` のリストを確認することができる。
+
+
 
 

@@ -25,6 +25,15 @@ Vagrant は仮想イメージを `box` とよばれるフォーマットで扱�
 
 でローカルに登録された`box` のリストを確認することができる。
 
+## Activate Linux
 
+`box` を登録したら仮想マシンを作成し立ち上げる。仮想マシンはディレクトリ毎に管理される。  
+
+1. 適当なディレクトリを作成し、その中に入る
+- `$ vagrant init ubuntu/trusty64` で、`ubuntu/trusty64` の`box`を指定した初期化を行う
+- `$ ls` で `Vagrantfile` が作成されていることを確認する。Windows なら `dir`
+- `$ vagrant up` で `Vagrantfile` を元に仮想マシンを作成し起動する
+- `$ vagrant ssh` で起動したマシンに login する。デフォルトではユーザ名とパスワードは`vagrant`
+  - Windows の場合は TeraTerm などから、ホスト `127.0.0.1`、ポート `2222` でログインする
 
 

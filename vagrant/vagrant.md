@@ -81,6 +81,26 @@ config.vm.network "public_network"
 ```
 ホストマシンと同列のLAN内に仮想マシンがあるにようする。ブリッジ接続を行う。
 
+## Provisioning
+
+`$ vagrant up` 実行と同時に環境構築を行うことできる。いくつかやり方があるが、`Vagrantfile` 内に shell プログラムを書いて、up 時に実行されるようにできる。
+
+```sh
+  config.vm.provision "shell", inline: <<-SHELL
+     sudo apt-get update
+     sudo apt-get install -y git
+  SHELL
+```
+
+こうすることで、up 時に 
+
+- `sudo apt-get update`
+- `sudo apt-get install -y git`
+
+の２つのコマンドが実行され、自動的に `git` がインストールされた環境を手に入れることができる。  
+`$ vagrant provision` コマンドを実行しても、実行される。  
+
+Provisioning は shell 以外にも chef や puppet を利用できる。
 
 
 
